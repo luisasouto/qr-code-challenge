@@ -1,21 +1,7 @@
 :root {
     --fonte-padrao: 'Outfit', sans-serif;
-    // --fonte-secundaria: serif;
     --cor-fonte: #4a4a4a;
-    --cor-site: #000; //cor predominante no site
-    --cor-secundaria: #888; //cor usada no site em pontos aleatórios
-    --cor-destaque: #31ff00; //cor frequentemente usada para destacar conteudo
-    --cor-auxiliar: #f1f1f1; //cor neutra (geralmente um cinza claro ou uma variação mais clara da cor predominante do site)
-    --cor-whatsapp: #25d366;
-    --cor-facebook: #1877f2;
-    --cor-instagram: #e4405f;
-    --cor-twitter: #1da1f2;
-    --cor-linkedin: #0a66c2;
-    --cor-youtube: #cd201f;
-    --cor-vimeo: #1ab7ea;
-    --cor-pinterest: #bd081c;
-    --cor-behance: #0067ff;
-
+    
     --fonte-10px: 0.625rem;
     --fonte-11px: 0.6875rem;
     --fonte-12px: 0.75rem;
@@ -53,16 +39,4 @@
     --espacamento-maior: 100px;
     --espacamento-media: 80px;
     --espacamento-normal: 50px;
-}
-
-.padrao-titulo {
-}
-
-.padrao-subtitulo {
-}
-
-.padrao-botao {
-}
-
-.padrao-bloco {
 }
