@@ -1,0 +1,58 @@
+
+@import "base/plugins";
+@import "base/main";
+@import "base/mixins";
+
+@import "padroes";
+
+*::selection {
+    background: var(--cor-fonte);
+    color: #fff;
+}
+
+*::-moz-selection {
+    background: var(--cor-fonte);
+    color: #fff;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1em;
+    font-family: var(--fonte-padrao);
+    color: var(--cor-fonte);
+}
+
+:target {
+    //scroll-margin-top: 80px;
+}
+
+p {
+    line-height: 1.5em;
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+@import "paginas";
+
+[js-bloco]{
+    display: none;
+}
+@for $i from 1 through 10 {
+  [js-bloco-ativo="#{$i}"] [js-bloco="#{$i}"]{display: block;}
+}

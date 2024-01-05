@@ -1,0 +1,89 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, input, textarea, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+
+*{margin: 0; padding: 0; border: none; box-shadow: none; outline: none; border-radius: 0; font-style: normal; font-weight: normal; box-sizing: border-box; cursor: default}
+a, button{cursor: pointer; *{cursor: pointer;}}
+input, textarea{cursor: text;}
+button, input{border-radius: 0;}
+button:focus, button:active, input:focus, input:active{outline: none;}
+
+body {line-height:1em;}
+ol, ul {list-style:none;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after {content:'';content:none;}
+table {border-collapse:collapse; border-spacing:0;}
+textarea, input, a {outline:none;}
+@-ms-viewport{width:device-width;}
+
+.clear {clear:both;}
+.no-overflow {position:relative; overflow:hidden;}
+.clearfix, .container {*zoom:1;} .clearfix:before, .clearfix:after, .container:before, .container:after {display:table; content:""; line-height:0;} .container:after, .clearfix:after {clear:both;}
+.hide-text {font:0/0 a; color:transparent; text-shadow:none; background-color:transparent; border:0; pointer-events: none; position: absolute; visibility: hidden;}
+.hidden {display:none !important;}
+.noselect {-webkit-touch-callout:none; -webkit-user-select:none; -khtml-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;}
+
+img{image-rendering: -webkit-optimize-contrast;}
+
+.h-100{height: 100%;}
+.w-100{width: 100%;}
+
+$grid-gutter-width: 30px; //gap entre cada coluna
+
+$grid-columns: 12; //número de colunas
+
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1200px
+); 
+//@media min-width das quebras (60px a mais do que o tamanho do container a partir da quebra)
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1140px
+); 
+//tamanhos dos containers em cada quebra - mudar também o --tamanho-container da quebra
+
+@import "bootstrap/_bootstrap-grid.scss";
+
+:root {
+  --tamanho-container: calc(100vw - #{$grid-gutter-width});
+
+  @include media-breakpoint-up(sm) {--tamanho-container: calc(540px - #{$grid-gutter-width});}
+  @include media-breakpoint-up(md) {--tamanho-container: calc(720px - #{$grid-gutter-width});}
+  @include media-breakpoint-up(lg) {--tamanho-container: calc(960px - #{$grid-gutter-width});}
+  @include media-breakpoint-up(xl) {--tamanho-container: calc(1140px - #{$grid-gutter-width});}
+  @include media-breakpoint-up(xxl) {--tamanho-container: calc(1140px - #{$grid-gutter-width});}
+
+  --tamanho-borda: calc(#{$grid-gutter-width} * 0.5);
+  @include media-breakpoint-up(sm) {--tamanho-borda: calc(calc(100vw - var(--tamanho-container)) / 2);}
+
+  --tamanho-coluna: calc(calc(var(--tamanho-container) - #{$grid-gutter-width}) / #{$grid-columns});
+}
+
+@include media-breakpoint-up(lg){
+    .visible-mobile{display: none !important;}
+}
+@include media-breakpoint-down(lg){
+    .visible-desktop{display: none !important;}
+}
+
+.row > *{
+  position: relative;
+}
+
+.no-gutters{
+  &.row{
+    margin: 0;
+    & > *{
+      padding: 0;
+    }
+  }
+}
